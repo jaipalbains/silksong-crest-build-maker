@@ -9,20 +9,3 @@ body
   height: 100vh;
   justify-content: space-evenly;
 }
-
-.container .vesticrest_container {
-    width: 15vw;
-    aspect-ratio: 1/2;
-}
-
-.container .hunter-crest_container {
-    width: 50vw;
-    aspect-ratio: 1;
-}
-
-@media (max-width: 800px) {
-  .container .skill-tool-list_container {
-    overflow: hidden;
-    max-width: 0;     /* or set a small width */
-  }
-}

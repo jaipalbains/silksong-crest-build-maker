@@ -2,6 +2,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  aspect-ratio: 1/1.5;
+  min-height: 600px;
+  overflow: clip;
 }
 
 .skill-tool-list{

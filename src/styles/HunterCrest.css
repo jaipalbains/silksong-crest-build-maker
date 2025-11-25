@@ -3,6 +3,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    aspect-ratio: 1;
+    min-height: 600px;
+    overflow: clip;
 }
 
 .crest
@@ -12,27 +15,27 @@
     align-items: center;
     width: 65%;
     height: 65%;
-    aspect-ratio: 1;
 }
 
 .crest img
 {
+    width: 100%;
     height: 100%;
     object-fit: contain;
 }
 
-.slot
+.hunter-crest_container .slot
 {
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
     width: 12%;
-    height: 12%;
+    aspect-ratio: 1;
     transform: translate(-50%, -50%); /*makes moving slots around more intuitive*/
 }
 
-.slot img
+.hunter-crest_container .slot img
 {
     width: 100%;
     height: 100%;
