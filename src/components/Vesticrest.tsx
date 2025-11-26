@@ -8,6 +8,13 @@ interface Props
     updateLoadout: (category: string) => void;
 }
 
+function getHeight(item: string)
+{
+    if(item.includes("slot")) return "12%"
+
+    return "14%";
+}
+
 function Vesticrest({blue_tool, yellow_tool, updateLoadout}:Props)
 {
     return(
@@ -16,14 +23,14 @@ function Vesticrest({blue_tool, yellow_tool, updateLoadout}:Props)
                 <img src="src/assets/crests/vesticrest.png"/>
             </div>
 
-            <div className="slot" style = {{top: "42%", left: "50%"}}>
+            <div className="slot" style = {{top: "42%", left: "50%", height: getHeight(blue_tool)}}>
                 <img 
                     src={getImgUrl(blue_tool, 'blue_tools')} 
                     onClick={() => {updateLoadout("blue_tools")}}
                 />
             </div>
 
-            <div className="slot" style = {{top: "64%", left: "50%"}}>
+            <div className="slot" style = {{top: "64.5%", left: "50%", height: getHeight(yellow_tool)}}>
                 <img 
                     src={getImgUrl(yellow_tool, 'yellow_tools')} 
                     onClick={() => {updateLoadout("yellow_tools")}}
