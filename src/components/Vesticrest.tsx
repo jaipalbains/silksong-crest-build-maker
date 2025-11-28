@@ -1,4 +1,4 @@
-import { getImgUrl } from '../helper';
+import { getImgUrl, getHeight } from '../helper';
 import '../styles/Vesticrest.css'
 
 interface Props
@@ -6,13 +6,6 @@ interface Props
     blue_tool: string;
     yellow_tool: string;
     updateLoadout: (category: string) => void;
-}
-
-function getHeight(item: string)
-{
-    if(item.includes("slot")) return "12%"
-
-    return "14%";
 }
 
 function Vesticrest({blue_tool, yellow_tool, updateLoadout}:Props)

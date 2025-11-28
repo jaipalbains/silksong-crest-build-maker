@@ -1,33 +1,28 @@
 import { getImgUrl, getHeight } from '../helper';
-import '../styles/HunterCrest.css'
+import '../styles/Crest.css'
 
 interface Props
 {
+    crest_img: string
     skills: string[];
     red_tools: string[];
     blue_tools: string[];
     yellow_tools: string[];
+    coords: {skills: string[][]; red_tools: string[][]; blue_tools: string[][]; yellow_tools: string[][]};
     updateLoadout: (item: string, category: string) => void;
 }
 
 
-function HunterCrest({skills, red_tools, blue_tools, yellow_tools, updateLoadout}:Props)
+function Crest({crest_img, skills, red_tools, blue_tools, yellow_tools, coords, updateLoadout}:Props)
 {
-    var scoords = [["50%", "68%"]];
-    var rcoords = [["50%", "45%"], ["50%", "90%"]];
-    var bcoords = [["18%", "67%"], ["32%", "80%"]];
-    var ycoords = [["82%", "67%"], ["68%", "80%"]];
-
-
-
     return (
-        <div className="hunter-crest_container">
+        <div className="crest_container">
             <div className="crest">
-                <img src="src/assets/crests/hunter_crest.png"/>
+                <img src={crest_img}/>
             </div>
-
+            
             {skills.map((skill, i) => 
-                <div className="slot" style={{left: scoords[i][0], top: scoords[i][1], height: getHeight(skill)}}>
+                <div className="slot" style={{left: coords.skills[i][0], top: coords.skills[i][1], height: getHeight(skill)}}>
                     <img 
                         key={i} 
                         src={getImgUrl(skill, 'skills')} 
@@ -37,7 +32,7 @@ function HunterCrest({skills, red_tools, blue_tools, yellow_tools, updateLoadout
             )}
 
             {red_tools.map((tool, i) => 
-                <div className="slot" style={{left: rcoords[i][0], top: rcoords[i][1],  height: getHeight(tool)}}>
+                <div className="slot" style={{left: coords.red_tools[i][0], top: coords.red_tools[i][1],  height: getHeight(tool)}}>
                     <img 
                         key={i} 
                         src={getImgUrl(tool, 'red_tools')} 
@@ -47,7 +42,7 @@ function HunterCrest({skills, red_tools, blue_tools, yellow_tools, updateLoadout
             )}
         
             {blue_tools.map((tool, i) => 
-                <div className="slot" style={{left: bcoords[i][0], top: bcoords[i][1],  height: getHeight(tool)}}>
+                <div className="slot" style={{left: coords.blue_tools[i][0], top: coords.blue_tools[i][1],  height: getHeight(tool)}}>
                     <img 
                         key={i} 
                         src={getImgUrl(tool, 'blue_tools')}  
@@ -56,15 +51,16 @@ function HunterCrest({skills, red_tools, blue_tools, yellow_tools, updateLoadout
                 </div>)}
 
             {yellow_tools.map((tool, i) => 
-                <div className="slot" style={{left: ycoords[i][0], top: ycoords[i][1],  height: getHeight(tool)}}>
+                <div className="slot" style={{left: coords.yellow_tools[i][0], top: coords.yellow_tools[i][1],  height: getHeight(tool)}}>
                     <img 
                         key={i} 
                         src={getImgUrl(tool, 'yellow_tools')}  
                         onClick={() => {updateLoadout(tool, "yellow_tools")}}
                     />
-                </div>)}       
+                </div>)}
+       
         </div>
     );
 }
 
-export default HunterCrest;
+export default Crest;
