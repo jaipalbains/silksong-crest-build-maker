@@ -25,6 +25,8 @@ function Crest({crest_img, loadout, config, updateLoadout}:Props)
                         src={getImgUrl(skill, 'skills')} 
                         onClick={() => {updateLoadout(skill, "skills")}}
                     />
+
+                    {skill != "skills_slot" && <div className="border" style = {{borderColor: "white"}}/>}
                 </div>
             )}
 
@@ -35,6 +37,8 @@ function Crest({crest_img, loadout, config, updateLoadout}:Props)
                         src={getImgUrl(tool, 'red_tools')} 
                         onClick={() => {updateLoadout(tool, "red_tools")}}
                     />
+
+                    {tool != "red_tools_slot" && <div className="border" style = {{borderColor: "#eb857d"}}/>}
                 </div>
             )}
         
@@ -45,7 +49,10 @@ function Crest({crest_img, loadout, config, updateLoadout}:Props)
                         src={getImgUrl(tool, 'blue_tools')}  
                         onClick={() => {updateLoadout(tool, "blue_tools")}}
                     />
-                </div>)}
+
+                    {tool != "blue_tools_slot" && <div className="border" style = {{borderColor: "#76def0"}}/>}
+                </div>
+            )}
 
             {loadout.yellow_tools.map((tool, i) => 
                 <div className="slot" style={{left: config.ytools_pos[i][0], top: config.ytools_pos[i][1],  height: getHeight(tool)}}>
@@ -54,8 +61,10 @@ function Crest({crest_img, loadout, config, updateLoadout}:Props)
                         src={getImgUrl(tool, 'yellow_tools')}  
                         onClick={() => {updateLoadout(tool, "yellow_tools")}}
                     />
-                </div>)}
-       
+
+                    {tool != "yellow_tools_slot" && <div className="border" style = {{borderColor: "#f0cc7e"}}/>}
+                </div>
+            )}
         </div>
     );
 }
