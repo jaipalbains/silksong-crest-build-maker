@@ -4,25 +4,22 @@ import '../styles/Crest.css'
 interface Props
 {
     crest_img: string
-    skills: string[];
-    red_tools: string[];
-    blue_tools: string[];
-    yellow_tools: string[];
-    coords: {skills: string[][]; red_tools: string[][]; blue_tools: string[][]; yellow_tools: string[][]};
+    loadout: { skills: string[]; red_tools: string[]; blue_tools: string[]; yellow_tools: string[]; }
+    config: {size: string; skills_pos: string[][]; rtools_pos: string[][]; btools_pos: string[][]; ytools_pos: string[][]};
     updateLoadout: (item: string, category: string) => void;
 }
 
 
-function Crest({crest_img, skills, red_tools, blue_tools, yellow_tools, coords, updateLoadout}:Props)
+function Crest({crest_img, loadout, config, updateLoadout}:Props)
 {
     return (
         <div className="crest_container">
-            <div className="crest">
+            <div className="crest"  style={{width: config.size, height: config.size}}>
                 <img src={crest_img}/>
             </div>
             
-            {skills.map((skill, i) => 
-                <div className="slot" style={{left: coords.skills[i][0], top: coords.skills[i][1], height: getHeight(skill)}}>
+            {loadout.skills.map((skill, i) => 
+                <div className="slot" style={{left: config.skills_pos[i][0], top: config.skills_pos[i][1], height: getHeight(skill)}}>
                     <img 
                         key={i} 
                         src={getImgUrl(skill, 'skills')} 
@@ -31,8 +28,8 @@ function Crest({crest_img, skills, red_tools, blue_tools, yellow_tools, coords, 
                 </div>
             )}
 
-            {red_tools.map((tool, i) => 
-                <div className="slot" style={{left: coords.red_tools[i][0], top: coords.red_tools[i][1],  height: getHeight(tool)}}>
+            {loadout.red_tools.map((tool, i) => 
+                <div className="slot" style={{left: config.rtools_pos[i][0], top: config.rtools_pos[i][1],  height: getHeight(tool)}}>
                     <img 
                         key={i} 
                         src={getImgUrl(tool, 'red_tools')} 
@@ -41,8 +38,8 @@ function Crest({crest_img, skills, red_tools, blue_tools, yellow_tools, coords, 
                 </div>
             )}
         
-            {blue_tools.map((tool, i) => 
-                <div className="slot" style={{left: coords.blue_tools[i][0], top: coords.blue_tools[i][1],  height: getHeight(tool)}}>
+            {loadout.blue_tools.map((tool, i) => 
+                <div className="slot" style={{left: config.btools_pos[i][0], top: config.btools_pos[i][1],  height: getHeight(tool)}}>
                     <img 
                         key={i} 
                         src={getImgUrl(tool, 'blue_tools')}  
@@ -50,8 +47,8 @@ function Crest({crest_img, skills, red_tools, blue_tools, yellow_tools, coords, 
                     />
                 </div>)}
 
-            {yellow_tools.map((tool, i) => 
-                <div className="slot" style={{left: coords.yellow_tools[i][0], top: coords.yellow_tools[i][1],  height: getHeight(tool)}}>
+            {loadout.yellow_tools.map((tool, i) => 
+                <div className="slot" style={{left: config.ytools_pos[i][0], top: config.ytools_pos[i][1],  height: getHeight(tool)}}>
                     <img 
                         key={i} 
                         src={getImgUrl(tool, 'yellow_tools')}  
