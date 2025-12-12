@@ -243,7 +243,6 @@ function App()
     });
   }
 
-  //add alt to images
   return(
     <>
     <div className="container">

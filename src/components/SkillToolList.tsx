@@ -54,7 +54,7 @@ function SkillToolList({loadout, vestiLoadout, updateLoadout}:Props)
 
                 <div className ="category">
                     {skills.map((skill, i) => 
-                        <div className="category_item">
+                        <div className="category_item" key={i}>
                             <img 
                                 key={i} 
                                 src={getImgUrl(skill, 'skills')} 
@@ -71,7 +71,7 @@ function SkillToolList({loadout, vestiLoadout, updateLoadout}:Props)
 
                 <div className ="category">
                     {redTools.map((tool, i) => 
-                        <div className="category_item">
+                        <div className="category_item" key={i}>
                             <img 
                                 key={i} 
                                 src={getImgUrl(tool, 'red_tools')} 
@@ -88,7 +88,7 @@ function SkillToolList({loadout, vestiLoadout, updateLoadout}:Props)
                 
                 <div className ="category">
                     {blueTools.map((tool, i) => 
-                        <div className="category_item">
+                        <div className="category_item" key={i}>
                             <img 
                                 key={i} 
                                 src={getImgUrl(tool, 'blue_tools')} 
@@ -105,7 +105,7 @@ function SkillToolList({loadout, vestiLoadout, updateLoadout}:Props)
 
                 <div className ="category">
                     {yellowTools.map((tool, i) => 
-                        <div className="category_item">
+                        <div className="category_item" key={i}>
                             <img 
                                 key={i} 
                                 src={getImgUrl(tool, 'yellow_tools')} 

@@ -19,7 +19,7 @@ function Crest({crest_img, loadout, config, updateLoadout}:Props)
             </div>
             
             {loadout.skills.map((skill, i) => 
-                <div className="slot" style={{left: config.skills_pos[i][0], top: config.skills_pos[i][1], height: getHeight(skill)}}>
+                <div className="slot" key={i} style={{left: config.skills_pos[i][0], top: config.skills_pos[i][1], height: getHeight(skill)}}>
                     <img 
                         key={i} 
                         src={getImgUrl(skill, 'skills')} 
@@ -31,7 +31,7 @@ function Crest({crest_img, loadout, config, updateLoadout}:Props)
             )}
 
             {loadout.red_tools.map((tool, i) => 
-                <div className="slot" style={{left: config.rtools_pos[i][0], top: config.rtools_pos[i][1],  height: getHeight(tool)}}>
+                <div className="slot" key={i} style={{left: config.rtools_pos[i][0], top: config.rtools_pos[i][1],  height: getHeight(tool)}}>
                     <img 
                         key={i} 
                         src={getImgUrl(tool, 'red_tools')} 
@@ -43,7 +43,7 @@ function Crest({crest_img, loadout, config, updateLoadout}:Props)
             )}
         
             {loadout.blue_tools.map((tool, i) => 
-                <div className="slot" style={{left: config.btools_pos[i][0], top: config.btools_pos[i][1],  height: getHeight(tool)}}>
+                <div className="slot" key={i} style={{left: config.btools_pos[i][0], top: config.btools_pos[i][1],  height: getHeight(tool)}}>
                     <img 
                         key={i} 
                         src={getImgUrl(tool, 'blue_tools')}  
@@ -55,7 +55,7 @@ function Crest({crest_img, loadout, config, updateLoadout}:Props)
             )}
 
             {loadout.yellow_tools.map((tool, i) => 
-                <div className="slot" style={{left: config.ytools_pos[i][0], top: config.ytools_pos[i][1],  height: getHeight(tool)}}>
+                <div className="slot" key={i} style={{left: config.ytools_pos[i][0], top: config.ytools_pos[i][1],  height: getHeight(tool)}}>
                     <img 
                         key={i} 
                         src={getImgUrl(tool, 'yellow_tools')}  
