@@ -260,7 +260,11 @@ function App()
         updateLoadout={handleSkillToolRemoval}
       />
 
-      <SkillToolList updateLoadout={handleLoadoutChange}/>
+      <SkillToolList 
+        loadout = {loadout}
+        vestiLoadout = {vestiLoadout}
+        updateLoadout={handleLoadoutChange}
+        />
     </div>
     
     <div style={{color: "white"}}>Hunter = 1, Reaper = 2, Wanderer = 3, Beast = 4, Architect = 5, Witch = 6, Shaman = 7</div>

@@ -3,10 +3,12 @@ import '../styles/SkillToolList.css'
 
 interface Props
 {
+    loadout: { skills: string[]; red_tools: string[]; blue_tools: string[]; yellow_tools: string[]; }
+    vestiLoadout: {blue_tools: string, yellow_tools: string}
     updateLoadout: (item: string, category: string) => void;
 }
 
-function SkillToolList({updateLoadout}:Props) 
+function SkillToolList({loadout, vestiLoadout, updateLoadout}:Props) 
 {
     const skills = [
         "silkspear", "thread_storm", "cross_stitch",
@@ -53,7 +55,13 @@ function SkillToolList({updateLoadout}:Props)
                 <div className ="category">
                     {skills.map((skill, i) => 
                         <div className="category_item">
-                            <img key={i} src={getImgUrl(skill, 'skills')} onClick={() => {updateLoadout(skill, "skills")}}/>
+                            <img 
+                                key={i} 
+                                src={getImgUrl(skill, 'skills')} 
+                                onClick={() => {updateLoadout(skill, "skills")}}
+                            />
+
+                            {loadout.skills.includes(skill) && <div className="border" style = {{borderColor: "white"}}/>}
                         </div>)}
                 </div>
 
@@ -64,7 +72,13 @@ function SkillToolList({updateLoadout}:Props)
                 <div className ="category">
                     {redTools.map((tool, i) => 
                         <div className="category_item">
-                            <img key={i} src={getImgUrl(tool, 'red_tools')} onClick={() => {updateLoadout(tool, "red_tools")}}/>
+                            <img 
+                                key={i} 
+                                src={getImgUrl(tool, 'red_tools')} 
+                                onClick={() => {updateLoadout(tool, "red_tools")}}
+                            />
+
+                            {loadout.red_tools.includes(tool) && <div className="border" style = {{borderColor: "#eb857d"}}/>}
                         </div>)}
                 </div>
 
@@ -75,7 +89,13 @@ function SkillToolList({updateLoadout}:Props)
                 <div className ="category">
                     {blueTools.map((tool, i) => 
                         <div className="category_item">
-                            <img key={i} src={getImgUrl(tool, 'blue_tools')} onClick={() => {updateLoadout(tool, "blue_tools")}}/>
+                            <img 
+                                key={i} 
+                                src={getImgUrl(tool, 'blue_tools')} 
+                                onClick={() => {updateLoadout(tool, "blue_tools")}}
+                            />
+
+                            {(loadout.blue_tools.includes(tool) || vestiLoadout.blue_tools == tool) && <div className="border" style = {{borderColor: "#76def0"}}/>}
                         </div>)}
                 </div>
 
@@ -86,7 +106,13 @@ function SkillToolList({updateLoadout}:Props)
                 <div className ="category">
                     {yellowTools.map((tool, i) => 
                         <div className="category_item">
-                            <img key={i} src={getImgUrl(tool, 'yellow_tools')} onClick={() => {updateLoadout(tool, "yellow_tools")}}/>
+                            <img 
+                                key={i} 
+                                src={getImgUrl(tool, 'yellow_tools')} 
+                                onClick={() => {updateLoadout(tool, "yellow_tools")}}
+                            />
+
+                            {(loadout.yellow_tools.includes(tool) || vestiLoadout.yellow_tools == tool) && <div className="border" style = {{borderColor: "#f0cc7e"}}/>}
                         </div>)}
                 </div>
             </div>

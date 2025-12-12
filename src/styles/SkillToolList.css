@@ -4,7 +4,6 @@
   align-items: center;
   aspect-ratio: 1/1.5;
   min-height: 600px;
-  overflow: clip;
 }
 
 .skill-tool-list{
@@ -36,6 +35,7 @@
   justify-content: center;
   align-items: center;
   aspect-ratio: 1;
+  position: relative;
 }
 
 .category_item img
@@ -43,6 +43,17 @@
   width: 80%;
   height: 80%;
   object-fit: contain
+}
+
+.category_item .border
+{
+    position: absolute;
+    padding: 46%;
+    border-radius: 50%;
+    pointer-events:"none";
+    border-style: solid;
+    border-width: 4px;
+    z-index: -1;
 }
 
 ::-webkit-scrollbar {display:none;}
