@@ -43,7 +43,7 @@
 .crest_container .slot .border
 {
     position: absolute;
-    padding: 60%;
+    padding: 57%;
     border-radius: 50%;
     pointer-events:"none";
     border-style: solid;
