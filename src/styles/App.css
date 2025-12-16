@@ -1,11 +1,13 @@
 body
 {
   background-color: black;
+  margin: 0
 }
 
-.container {
+.container 
+{
   display: flex;
   width: 100vw;
-  height: 96vh;
+  height: 100vh;
   justify-content: space-evenly;
 }

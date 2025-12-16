@@ -24,8 +24,8 @@ function App()
       case "2": setCurrCrest("reaper"); break;
       case "3": setCurrCrest("wanderer"); break;
       case "4": setCurrCrest("beast"); break;
-      case "5": setCurrCrest("architect"); break;
-      case "6": setCurrCrest("witch"); break;
+      case "5": setCurrCrest("witch"); break;
+      case "6": setCurrCrest("architect"); break;
       case "7": setCurrCrest("shaman"); break;
       default: break;
     }
@@ -66,18 +66,18 @@ function App()
     yellow_tools: ["yellow_tools_slot", "yellow_tools_slot"] as string[]
   });
 
-  const [architectLoadout, setArchitectLoadout] = useState( {
-    skills: [] as string[],
-    red_tools: ["red_tools_slot", "red_tools_slot", "red_tools_slot"] as string[], 
-    blue_tools: ["blue_tools_slot", "blue_tools_slot"] as string[], 
-    yellow_tools: ["yellow_tools_slot", "yellow_tools_slot"] as string[]
-  });
-
   const [witchLoadout, setWitchLoadout] = useState( {
     skills: ["skills_slot"] as string[],
     red_tools: ["red_tools_slot", "red_tools_slot"] as string[], 
     blue_tools: ["blue_tools_slot", "blue_tools_slot", "blue_tools_slot"] as string[], 
     yellow_tools: [] as string[]
+  });
+
+  const [architectLoadout, setArchitectLoadout] = useState( {
+    skills: [] as string[],
+    red_tools: ["red_tools_slot", "red_tools_slot", "red_tools_slot"] as string[], 
+    blue_tools: ["blue_tools_slot", "blue_tools_slot"] as string[], 
+    yellow_tools: ["yellow_tools_slot", "yellow_tools_slot"] as string[]
   });
 
   const [shamanLoadout, setShamanLoadout] = useState( {
@@ -134,16 +134,16 @@ function App()
       crestConfig = beastCrestConfig;
       break;
     
-    case "architect":
-      loadout = architectLoadout;
-      setLoadout = setArchitectLoadout;
-      crestConfig = architectCrestConfig;
-      break;
-    
     case "witch":
       loadout = witchLoadout;
       setLoadout = setWitchLoadout;
       crestConfig = witchCrestConfig;
+      break;
+
+    case "architect":
+      loadout = architectLoadout;
+      setLoadout = setArchitectLoadout;
+      crestConfig = architectCrestConfig;
       break;
 
     case "shaman":
@@ -265,8 +265,6 @@ function App()
         updateLoadout={handleLoadoutChange}
         />
     </div>
-    
-    <div style={{color: "white"}}>Hunter = 1, Reaper = 2, Wanderer = 3, Beast = 4, Architect = 5, Witch = 6, Shaman = 7</div>
     </>
   )
 }
