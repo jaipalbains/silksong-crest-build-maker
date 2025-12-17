@@ -166,28 +166,37 @@ function App()
 
     if(!isValidCategory)
       return;
-    
-    setLoadout((prev) => {
-      // If loadout category for current crest has no slots
+
+    // If item selected already equipped then remove
+    if(loadout[category].indexOf(item) != -1 || ((category == "blue_tools" || category == "yellow_tools") && vestiLoadout[category] == item))
+    {
+      if(loadout[category].indexOf(item) != -1)
+        handleSkillToolRemoval(item, category)
+      else
+        handleVestiToolRemoval(category)
+      return
+    }
+
+    setLoadout((prev) => {      
+      // If loadout category for current crest has no available slots
       if (!prev[category] || prev[category].length === 0)
       {
         if((category == "blue_tools" || category == "yellow_tools"))
           handleVestiLoadoutChange(item, category);
         return prev;
       }
-      
-      // Prevent duplicate items being added
-      if(loadout[category].indexOf(item) != -1 || ((category == "blue_tools" || category == "yellow_tools") && vestiLoadout[category] == item))
-        return prev;
 
-      // If no slot available for that category, check vesticrest before replacing first slot
+      // If no slot available for that category, check vesticrest before replacing 'first' slot
       let index = prev[category].findIndex(x => x.includes("slot"));
       if(index == -1)
         if((category == "blue_tools" || category == "yellow_tools") && vestiLoadout[category].includes("slot"))
+        {
           handleVestiLoadoutChange(item, category);
+          return prev
+        }
         else
           index = 0;
-    
+      
       const updated = [...prev[category]];
       updated[index] = item;
 
@@ -209,7 +218,7 @@ function App()
       if(prev[category].indexOf(item) == -1)
         return prev;
 
-      let index = loadout[category].indexOf(item);
+      let index = prev[category].indexOf(item);
       const updated = [...prev[category]];
       updated[index] = `${category}_slot`;
 
@@ -233,7 +242,6 @@ function App()
     });
   }
   
-
   const handleVestiToolRemoval = (category: string) => {      
     setVestiLoadout(prev => {
       return {
