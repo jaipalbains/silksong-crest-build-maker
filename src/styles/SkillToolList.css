@@ -10,6 +10,8 @@
   width: 90%;
   height: 90%;
   overflow-y: auto;
+  --fade-amount: 12%;
+  mask-image: linear-gradient(to bottom, transparent, black var(--fade-amount), black calc(100% - var(--fade-amount)), transparent);
 }
 
 .heading {
