@@ -27,7 +27,7 @@ export const reaperCrestConfig = {
 
 export const wandererCrestConfig = {
     "size": "72%",
-    "skills_pos": [["50%", "40%"]],
+    "skills_pos": [["50%", "38%"]],
     "rtools_pos": [["50%", "15.5%"]],
     "btools_pos": [["24.5%", "24.5%"], ["75.5%", "24.5%"]],
     "ytools_pos": [["50%", "72%"],["21.5%", "55.5%"], ["78.5%", "55.5%"]],
