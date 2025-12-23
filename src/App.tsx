@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import InstructionsPopup from './components/InstructionsPopup';
 import Vesticrest from './components/Vesticrest';
 import Crest from './components/Crest';
 import SkillToolList from './components/SkillToolList';
@@ -252,8 +253,9 @@ function App()
   }
 
   return(
-    <>
     <div className="container">
+      <InstructionsPopup/>
+
       <Vesticrest
         blue_tool={vestiLoadout.blue_tools}
         yellow_tool={vestiLoadout.yellow_tools}
@@ -273,7 +275,6 @@ function App()
         updateLoadout={handleLoadoutChange}
         />
     </div>
-    </>
   )
 }
 

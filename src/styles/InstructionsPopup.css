@@ -1,0 +1,56 @@
+.instructions
+{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    font-family: "Perpetua";
+}
+
+.instructions-btn
+{
+    position: fixed;
+    top: 0;
+    left: 1%;
+    color: white;
+    background-color: black;
+    border: solid white;
+    z-index: 1;
+    font-family: "Perpetua";
+    font-size: 18px;
+}
+
+.popup
+{
+    position: fixed;
+    top: 10%;
+    left: 10%;
+    z-index: 1;
+    padding: 2%;
+    color: white;
+    background-color: black;
+    border: solid white;
+    display: flex;
+    align-items: center;
+    min-width: 400px;
+    min-height: 400px;
+    font-size: 18px;
+}
+
+.popup .close-btn
+{
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    color: white;
+    background-color: black;
+    border: solid white;
+}
+
+kbd
+{
+    display: inline-block;
+    color: black;
+    background-color: white;
+    padding: 2px 6px;
+    border: solid #CDCDCD;
+}
