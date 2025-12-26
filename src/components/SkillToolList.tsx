@@ -51,7 +51,6 @@ function SkillToolList({loadout, vestiLoadout, updateLoadout}:Props)
                     <img src="src/assets/headings/skill_heading.png"/>
                 </div>
 
-
                 <div className ="category">
                     {skills.map((skill, i) => 
                         <div className="category_item" key={i}>

@@ -1,31 +1,37 @@
-.skill-tool-list_container {
+.skill-tool-list_container
+{
   display: flex;
   justify-content: center;
   align-items: center;
-  aspect-ratio: 1/1.9;
   min-height: 600px;
+  aspect-ratio: 1/1.9;
 }
 
-.skill-tool-list{
+.skill-tool-list
+{
+  overflow-y: auto;
   width: 90%;
   height: 90%;
-  overflow-y: auto;
+  
   --fade-amount: 12%;
   mask-image: linear-gradient(to bottom, transparent, black var(--fade-amount), black calc(100% - var(--fade-amount)), transparent);
 }
 
-.heading {
+.heading
+{
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.heading img {
+.heading img
+{
+  width: 65%;
   padding: 5%;
-  width: 65%
 }
 
-.category{
+.category
+{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   width: 100%;
@@ -33,11 +39,11 @@
 
 .category_item
 {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   aspect-ratio: 1;
-  position: relative;
 }
 
 .category_item img
@@ -49,13 +55,12 @@
 
 .category_item .border
 {
-    position: absolute;
-    padding: 46%;
-    border-radius: 50%;
-    pointer-events:"none";
-    border-style: solid;
-    border-width: 4px;
-    z-index: -1;
+  position: absolute;
+  z-index: -1;
+  border-style: solid;
+  border-width: 4px;
+  border-radius: 50%;
+  padding: 46%;
 }
 
 ::-webkit-scrollbar {display:none;}

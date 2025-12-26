@@ -14,7 +14,7 @@ function Crest({crest_img, loadout, config, updateLoadout}:Props)
 {
     return (
         <div className="crest_container">
-            <div className="crest"  style={{width: config.size, height: config.size}}>
+            <div className="crest" style={{width: config.size, height: config.size}}>
                 <img src={crest_img}/>
             </div>
             

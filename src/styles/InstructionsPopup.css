@@ -3,36 +3,39 @@
     position: absolute;
     width: 100vw;
     height: 100vh;
-    font-family: "Perpetua";
 }
 
 .instructions-btn
 {
     position: fixed;
+    z-index: 1;
     top: 0;
     left: 1%;
-    color: white;
+
     background-color: black;
     border: solid white;
-    z-index: 1;
-    font-family: "Perpetua";
     font-size: 18px;
+    font-family: "Perpetua";
+    color: white;
 }
 
 .popup
 {
     position: fixed;
+    z-index: 1;
     top: 10%;
     left: 10%;
-    z-index: 1;
-    padding: 2%;
-    color: white;
-    background-color: black;
-    border: solid white;
+    
     display: flex;
     align-items: center;
+
+    background-color: black;
+    border: solid white;
+    color: white;
     min-width: 400px;
     min-height: 400px;
+    padding: 2%;
+    font-family: "Perpetua";
     font-size: 18px;
 }
 
@@ -41,16 +44,17 @@
     position: absolute;
     top: -2px;
     right: -2px;
-    color: white;
+
     background-color: black;
     border: solid white;
+    color: white;
 }
 
 kbd
 {
     display: inline-block;
-    color: black;
-    background-color: white;
-    padding: 2px 6px;
     border: solid #CDCDCD;
+    padding: 2px 6px;
+    background-color: white;
+    color: black;
 }

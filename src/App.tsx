@@ -12,6 +12,7 @@ function App()
   /* 
     Tracks which crest is currently active and updates it when the user presses number keys 1–7
   */
+
   const [currCrest, setCurrCrest] = useState("hunter");
 
   useEffect(() => {
@@ -38,6 +39,7 @@ function App()
     slots varies per class as it does ingame. Default values (e.g., "skills_slot", "red_tools_slot") used to represent unassigned
     slots.
   */
+
   const [hunterLoadout, setHunterLoadout] = useState( {
     skills: ["skills_slot"] as string[],
     red_tools: ["red_tools_slot", "red_tools_slot"] as string[], 
@@ -97,6 +99,7 @@ function App()
   /*
     Update which loadout and configuration data are in use depending on crest
   */
+
   type LoadoutSetter = React.Dispatch<React.SetStateAction<Loadout>>;
   type Loadout = {
     skills: string[];
@@ -161,6 +164,7 @@ function App()
   /*
     Handles addition and removal of items from the currently active crest loadout
   */  
+
   const handleLoadoutChange = (item: string, category: string) => {      
     const isValidCategory = (category == "skills" || category == "red_tools" || category == "blue_tools" || 
       category == "yellow_tools");
@@ -233,7 +237,8 @@ function App()
 
   /*
     Handles addition and removal of items from the vesticrest loadout
-  */  
+  */ 
+  
   const handleVestiLoadoutChange = (item: string, category: string) => {      
     setVestiLoadout(prev => {
       return {
