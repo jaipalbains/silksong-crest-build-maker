@@ -3,7 +3,7 @@ Hollow Knight: Silksong has collectibles called 'crests'. The player will have a
 
 This project is an online crest builder, and aims to make the process of designing these builds quick and convenient.
 
-Available at: ...
+Available at: https://jaipalbains.github.io/silksong-crest-build-maker/
 
 ## Running locally
 
@@ -13,10 +13,10 @@ Available at: ...
 
 ### Commands
 ```bash
-git clone https://github.com/...  # Clone repository
-cd silksong-crest-build-maker     # Change to project directory
-npm install                       # Install dependencies
-npm run dev                       # Setup development environment
+git clone https://github.com/jaipalbains/silksong-crest-build-maker.git     # Clone repository
+cd silksong-crest-build-maker                                               # Change to project directory
+npm install                                                                 # Install dependencies
+npm run dev                                                                 # Setup development environment
 ```
 
 Access the application by then visiting http://localhost:5173
