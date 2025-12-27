@@ -1,4 +1,8 @@
 import { getImgUrl } from '../helper';
+import skillHeadingImg from '../assets/headings/skill_heading.png'
+import redToolHeadingImg from '../assets/headings/red_tool_heading.png'
+import blueToolHeadingImg from '../assets/headings/blue_tool_heading.png'
+import yellowToolHeadingImg from '../assets/headings/yellow_tool_heading.png'
 import '../styles/SkillToolList.css'
 
 interface Props
@@ -48,7 +52,7 @@ function SkillToolList({loadout, vestiLoadout, updateLoadout}:Props)
             <div className="skill-tool-list">
                 
                 <div className ="heading">
-                    <img src="src/assets/headings/skill_heading.png"/>
+                    <img src={skillHeadingImg}/>
                 </div>
 
                 <div className ="category">
@@ -65,7 +69,7 @@ function SkillToolList({loadout, vestiLoadout, updateLoadout}:Props)
                 </div>
 
                 <div className ="heading">
-                    <img src="src/assets/headings/red_tool_heading.png"/>
+                    <img src={redToolHeadingImg}/>
                 </div>
 
                 <div className ="category">
@@ -82,7 +86,7 @@ function SkillToolList({loadout, vestiLoadout, updateLoadout}:Props)
                 </div>
 
                 <div className ="heading">
-                    <img src="src/assets/headings/blue_tool_heading.png"/>
+                    <img src={blueToolHeadingImg}/>
                 </div>
                 
                 <div className ="category">
@@ -99,7 +103,7 @@ function SkillToolList({loadout, vestiLoadout, updateLoadout}:Props)
                 </div>
 
                 <div className ="heading">
-                    <img src="src/assets/headings/yellow_tool_heading.png"/>
+                    <img src={yellowToolHeadingImg}/>
                 </div>
 
                 <div className ="category">

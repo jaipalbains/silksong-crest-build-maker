@@ -1,4 +1,5 @@
 import { getImgUrl, getHeight } from '../helper';
+import vesticrestImg from '../assets/crests/vesticrest.png'
 import '../styles/Vesticrest.css'
 
 interface Props
@@ -13,7 +14,7 @@ function Vesticrest({blue_tool, yellow_tool, updateLoadout}:Props)
     return(
         <div className="vesticrest_container">
             <div className="vesticrest">
-                <img src="src/assets/crests/vesticrest.png"/>
+                <img src={vesticrestImg}/>
             </div>
 
             <div className="slot" style = {{top: "42%", left: "50%", height: getHeight(blue_tool)}}>

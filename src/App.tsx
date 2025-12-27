@@ -268,7 +268,7 @@ function App()
       />
       
       <Crest
-        crest_img = {`src/assets/crests/${currCrest}_crest.png`}
+        crest_img = {new URL(`./assets/crests/${currCrest}_crest.png`, import.meta.url).href}
         loadout={loadout}
         config = {crestConfig}
         updateLoadout={handleSkillToolRemoval}
