@@ -7,6 +7,15 @@ import './styles/App.css'
 import { hunterCrestConfig, reaperCrestConfig, wandererCrestConfig, beastCrestConfig, architectCrestConfig, 
   witchCrestConfig, shamanCrestConfig} from './crestConfig';
 
+
+// Preload crest images
+const crests = ["hunter", "reaper", "wanderer", "beast", "witch", "architect", "shaman"];
+crests.forEach(crest => 
+{
+  new Image().src = new URL(`./assets/crests/${crest}_crest.png`,import.meta.url).href;
+});
+
+
 function App() 
 {
   /* 
